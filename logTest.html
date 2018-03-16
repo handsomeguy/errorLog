@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <title>hello</title>
+    <style>
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+        
+        .hello {
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .color {
+            color: red;
+        }
+        
+        header {
+            height: 30px;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: #ff8181;
+            width: 100%;
+        }
+        
+        footer {
+            height: 30px;
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            background-color: #9b9bff;
+        }
+        
+        .main {
+            margin-top: 30px;
+            height: calc(100% - 60px);
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        这里是头部
+    </header>
+    <div class="main">
+        <div class="hello">this is a test page,please press <span class="color">F12</span> to check the result in the console</div>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+        <p>主要内容</p>
+    </div>
+    <footer>这里是底部</footer>
+    <script>
+        // window.onerror = function(error, uri, lineNumber, col, error) {
+        //     console.log(error, uri, lineNumber, col, error);
+        //     return true;
+        // }
+        // window.addEventListener('error', function(e, url, line, col, error) {
+        //     console.log(e);
+        // }, true);
+    </script>
+    <script type="text/javascript" src='./errorLog.js'></script>
+    <script>
+        // 初始化
+        errorLog.init(true, {
+            // 请在这里填入服务器地址
+            url: '/logErrorInfor',
+            type: 'get'
+        })
+    </script>
+    <script>
+        // 绑定try catch
+        errorLog.handle({
+            target: window,
+            prop: ['setTimeout', 'setInterval'],
+            cb: function() {
+                console.log('try callback');
+            }
+        })
+
+
+        // 测试错误监听
+        setTimeout(function() {
+            throw new Error('etst1');
+        }, 200)
+    </script>
+    <link rel="stylesheet" href="./asdasd.css">
+</body>
+
+</html>
